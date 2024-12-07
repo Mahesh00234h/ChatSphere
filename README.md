@@ -31,7 +31,7 @@ A real-time chat application built using Flask and Socket.IO. The application in
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/flask-socketio-chat.git
+   git clone https://github.com/Mahesh00234h/ChatSphere.git
    cd flask-socketio-chat
    ```
 
