@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>400 Bad Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #ff6347;
+            animation: fadeIn 1s ease-in-out;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+            border: 1px solid #3498db;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            animation: fadeIn 2s ease-in-out;
+        }
+        a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+            a {
+                padding: 8px 16px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://res.cloudinary.com/dxu2xavnq/image/upload/v1721969279/negative-vote_xgt4aj.png" alt="Logo" class="logo">
+    <h1>400 Bad Request</h1>
+    <p>The server could not understand the request due to invalid syntax.</p>
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+</html>

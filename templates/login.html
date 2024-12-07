@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dxu2xavnq/image/upload/v1721927677/_fb7b0ad7-a8ec-4ffa-a548-41d1e0baf242_t3j10e.jpg">
+
+    <icon src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></icon>
+    <style>
+       @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+      body {
+        background-color: #93969a;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        animation: fadeIn 1s ease-in;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #4f4c4c;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: slideIn 1s ease-in-out;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+
+      form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        border-radius: 30px;
+        background:linear-gradient(to right, #8d949b77, #804a97, #56517f);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+       
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #540b0b;
+        border-radius: 30px;
+        transition: border-color 0.3s;
+        background-color: linear-gradient(to right, #8d949b77, #804a97, #56517f);
+      }
+      
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+        transform: translateY(-3px);
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mt-3 {
+        margin-top: 20px;
+      }
+      a{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 20px;
+      transition: color 0.3s;
+      }
+      .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            background:linear-gradient(to right, #233f5d, #6b2053, #a96b78);
+            color: #fff;
+            font-size: 14px;
+            
+            animation: fadeIn 1s ease-in;
+        }
+   .version-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h2 class="text-center">Login</h2>
+          <form method="POST" action="{{ url_for('login') }}">
+            <div class="form-group">
+              <label for="username"></label>
+              <input type="text" class="form-control" placeholder="Username" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+              <label for="password"></label>
+              <input type="password" placeholder="Password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
+          <div class="text-center mt-3">
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    <div class="footer">
+      &copy; 2024 <strong>DevElite</strong>. All rights reserved.
+  </div>
+    
+  <div class="version-container">
+    Version 3.4.7
+</div>
+
+  </body>
+
+</html>

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>User Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/dxu2xavnq/image/upload/v1721927677/_fb7b0ad7-a8ec-4ffa-a548-41d1e0baf242_t3j10e.jpg">
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #2e2e2e;
+            color: #f5f5f5;
+            animation: fadeIn 1s ease-in;
+        }
+        .profile-container {
+            width: 100%;
+            max-width: 600px;
+            background: #333333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: slideIn 1s ease-in-out;
+        }
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #f5f5f5;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .profile-container img:hover{
+            transform: scale(1.1);
+
+        }
+
+        .profile-container img:hover {
+            transform: scale(1.1);
+        }
+        .profile-info {
+            font-size: 18px;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+            padding: 10px 20px;
+            border-radius: 5px;
+            
+            
+        }
+        .profile-info strong {
+            color: #1e90ff;
+        }
+        .profile-info p {
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .profile-button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .profile-button:hover {
+            background: #0056b3;
+            transform: translateY(-3px);
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+        .search-bar form {
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            border: none;
+            width: 70%;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .search-bar input[type="text"]:focus {
+            background: #444444;
+            outline: none;
+        }
+        .search-bar input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 0 5px 5px 0;
+            border: none;
+            background: #1e90ff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .search-bar input[type="submit"]:hover {
+            background: #007bff;
+            transform: translateY(-3px);
+        }
+        .search-results {
+            margin-top: 20px;
+            text-align: left;
+            animation: fadeIn 1s ease-in;
+        }
+        .search-results h3 {
+            margin-bottom: 10px;
+        }
+        .search-results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .search-results ul li {
+            background: #444444;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .search-results ul li:hover {
+            background: #555555;
+            transform: translateX(5px);
+        }
+        .search-results ul li a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        .search-results ul li a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px;
+            background:linear-gradient(to right, #233f5d, #6b2053, #a96b78);
+            color: #fff;
+            font-size: 14px;
+            
+            animation: fadeIn 1s ease-in;
+        }
+
+    .version-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+    .username {
+        font-weight: bold;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #2e2e2e;
+
+    }
+    .insta-ID a{
+        color: #1e90ff;
+        text-decoration: none;
+        
+    }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        {% if profile_pic_url %}
+            <img src="{{ profile_pic_url }}" alt="Profile Picture">
+        {% endif %}
+        <div class="profile-info">
+            <p class="username"><strong>Username:</strong> {{ username }}</p>
+            <p class="email"><strong>Email:</strong> {{ email }}</p>
+            <p class="insta-ID"><strong>Instagram ID:</strong> <a class="insta-ID" href="https://www.instagram.com/{{ insta_ID }}" target="_blank">{{ insta_ID }}</a></p>
+            <p class="join-date"><strong>Joined:</strong> {{ join_date }}</p>
+        </div>
+        <a href="/chat" class="profile-button">Back to Chat</a>
+        
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search for users" required>
+                <input type="submit" value="Search">
+            </form>
+        </div>
+        
+        <div class="search-results">
+            {% if search_results %}
+                <h3>Search Results:</h3>
+                <ul>
+                    {% for user in search_results %}
+                        <li>
+                            <a href="{{ url_for('profile', username=user['username']) }}">
+                                <strong>{{ user['username'] }}</strong>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 <strong>DevElite</strong>. All rights reserved.
+    </div>
+
+    <div class="version-container">
+        Version 3.4.7
+    </div>
+</body>
+</html>
