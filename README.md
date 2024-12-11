@@ -110,7 +110,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Contact
 
-For any queries or suggestions, please contact Mahesh at [your-email@example.com](mailto:your-email@example.com).
+For any queries or suggestions, please contact Mahesh at [your-email@example.com](mailto:doomdr058@gmail.com).
 
 ---
 Happy chatting! 😊
